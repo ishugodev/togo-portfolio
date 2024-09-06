@@ -1,0 +1,14 @@
+export default {
+  COLORS: {
+    BROWN_900: "#34170E",
+    BROWN_700: "#562E22",
+    BROWN_200: "#7C6963",
+
+    YELLOW_900: "#E9D710",
+
+    BG_LIGHT_BROWN: "#ECDBB7",
+    BG_LIGHT_YELLOW: "#EBE5A6",
+
+    BLUR_BLACK: "#272727B3"
+  }
+}
