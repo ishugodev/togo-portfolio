@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.article`
+export const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +11,8 @@ export const Container = styled.article`
 
   background: ${({ theme }) => theme.COLORS.BROWN_700};
   color: ${({ theme }) => theme.COLORS.BG_LIGHT_BROWN};
+
+  text-decoration: none;
   
   padding: 1.6rem;
   

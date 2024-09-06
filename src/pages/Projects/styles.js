@@ -30,7 +30,7 @@ export const Container = styled.div`
     margin-top: 4rem;
   }
 
-  article {
+  .projects-wrapper a {
     flex-direction: column;
     gap: 1.6rem;
     padding: 1.6rem;
@@ -58,7 +58,7 @@ export const Container = styled.div`
       width: 100%;
     }
     
-    article {
+    .projects-wrapper a {
       min-width: 32rem;
 
       img {

@@ -60,13 +60,13 @@ export function Home() {
         <h4>Contatos</h4>
 
         <div className="contact-wrapper">
-          <IconCard section="contacts">
+          <IconCard section="contacts" to="mailto:thiagokrugel743@gmail.com" target="_blank">
             <Envelope size={40} />
           </IconCard>
-          <IconCard section="contacts">
+          <IconCard section="contacts" to="https://github.com/thiagokrugel" target="_blank">
             <GithubLogo size={40} />
           </IconCard>
-          <IconCard section="contacts">
+          <IconCard section="contacts" to="https://www.linkedin.com/in/thiago-krügel-25606a26a/" target="_blank">
             <LinkedinLogo size={40} />
           </IconCard>
         </div>

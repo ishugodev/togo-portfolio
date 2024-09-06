@@ -115,11 +115,11 @@ export const Container = styled.div`
     background: linear-gradient(to left, #EBE5A680, transparent);
   }
 
-  .projects-wrapper article:first-child {
+  .projects-wrapper a:first-child {
     margin-left: 1.6rem;
   }
 
-  .projects-wrapper article:last-child {
+  .projects-wrapper a:last-child {
     margin-right: 1.6rem;
   }
 
@@ -148,15 +148,11 @@ export const Container = styled.div`
     margin-top: 4rem;
   }
 
-  .contact-wrapper * {
-    cursor: pointer;
-  }
-
   @media (min-width: 768px) {
     align-items: center;
 
     header {
-      margin-top: 4rem;
+      margin-top: 2.4rem;
       width: calc(100% - 8rem);
     }
     
@@ -265,11 +261,11 @@ export const Container = styled.div`
       background: linear-gradient(to left, #EBE5A6, transparent);
     }
 
-    .projects-wrapper article:first-child {
+    .projects-wrapper a:first-child {
       margin-left: 4rem;
     }
 
-    .projects-wrapper article:last-child {
+    .projects-wrapper a:last-child {
       margin-right: 4rem;
     }
 

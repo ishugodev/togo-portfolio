@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +16,9 @@ export const Container = styled.div`
   
   font-size: ${({ $fontSize }) => `${$fontSize?.lg}rem`};
   font-weight: 700;
+  text-decoration: none;
+
+  cursor: ${({ to }) => (to ? 'pointer' : 'default')};
 
   img {
     width: ${({ $child_size }) => `${$child_size?.lg}rem`};

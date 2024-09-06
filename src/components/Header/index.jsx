@@ -1,10 +1,13 @@
 import { List } from "@phosphor-icons/react";
-import { useEffect, useState, useRef } from "react";
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Container } from "./styles";
 
 export function Header() {
   const [activeMenu, setActiveMenu] = useState(false);
+
 
   function handleToggleMenu() {
     setActiveMenu(!activeMenu);
@@ -13,7 +16,7 @@ export function Header() {
   return(
     <Container>
       <div>
-        <a href="">togo</a>
+        <Link to="/">togo</Link>
       
       </div>
 
@@ -26,8 +29,8 @@ export function Header() {
         </button>
         
         <ul className={activeMenu ? 'menu menu-active' : 'menu'}>
-          <li><a href="">Projetos</a></li>
-          <li><a href="">Contato</a></li>
+          <li><Link to="/projects">Projetos</Link></li>
+          <li><Link to="/contact">Contato</Link></li>
         </ul>
 
       </nav>
