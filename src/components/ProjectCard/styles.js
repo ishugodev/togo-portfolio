@@ -5,7 +5,7 @@ export const Container = styled.article`
   flex-direction: column;
   gap: 1.6rem;
 
-  min-width: 32rem;
+  min-width: 28rem;
 
   background: ${({ theme }) => theme.COLORS.BROWN_700};
   color: ${({ theme }) => theme.COLORS.BG_LIGHT_BROWN};

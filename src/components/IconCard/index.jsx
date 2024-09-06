@@ -1,5 +1,5 @@
 import { Container, ChildElement } from "./styles";
-import { sectionStyles } from "../../src/styles/stylesConfig";
+import { sectionStyles } from "../../styles/stylesConfig";
 
 export function IconCard({ children, title, section }) {
   const styles = sectionStyles[section];

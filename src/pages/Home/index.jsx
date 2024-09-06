@@ -2,9 +2,9 @@ import { ArrowRight, Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/
 
 import { Container } from "./styles"
 
-import { Header } from "../../../components/Header"
-import { ProjectCard } from "../../../components/ProjectCard"
-import { IconCard } from "../../../components/IconCard"
+import { Header } from "../../components/Header"
+import { ProjectCard } from "../../components/ProjectCard"
+import { IconCard } from "../../components/IconCard"
 
 import node from "../../assets/icon_node.svg"
 import powerBi from "../../assets/icon_powerBi.svg"
