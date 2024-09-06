@@ -5,6 +5,7 @@ import { Container } from "./styles"
 import { Header } from "../../components/Header"
 import { ProjectCard } from "../../components/ProjectCard"
 import { IconCard } from "../../components/IconCard"
+import { Footer } from "../../components/Footer"
 
 import node from "../../assets/icon_node.svg"
 import powerBi from "../../assets/icon_powerBi.svg"
@@ -73,11 +74,7 @@ export function Home() {
         </div>
       </section>
 
-      <footer>
-        <strong>＊</strong>
-
-        <p>Copyright © | togo</p>
-      </footer>
+      <Footer />
     </Container>
   )
 }

@@ -9,8 +9,8 @@ export const Container = styled.footer`
 
     font-size: 1.6rem;
 
-    margin-top: 4.8rem;
-    margin-bottom: 6.4rem;
+    margin-top: 8rem;
+    margin-bottom: 3.2rem;
   
   strong {
     font-size: 2rem;
@@ -24,6 +24,9 @@ export const Container = styled.footer`
   }
 
   @media (min-width: 768px) {
+    margin-top: 16rem;
+    margin-bottom: 8rem;
+
     strong {
       font-size: 3.2rem;
       font-weight: 900;

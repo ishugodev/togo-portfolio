@@ -161,12 +161,8 @@ export const Container = styled.div`
     }
     
     header, #intro, h3, .see-all, #contacts, footer {
-      margin-inline: 4rem;
-    }
-
-
-    header, #intro, h3, .see-all, #contacts, footer {
       max-width: 108rem;
+      margin-inline: 4rem;
     }
 
     #intro {
@@ -275,6 +271,17 @@ export const Container = styled.div`
 
     .projects-wrapper article:last-child {
       margin-right: 4rem;
+    }
+
+    #contacts {
+      width: calc(100% - 8rem);
+    }
+
+    .contact-wrapper {
+      justify-content: start;
+      gap: 2.4rem;
+
+      margin-top: 6.4rem;
     }
   }
 `;

@@ -13,17 +13,21 @@ export const Container = styled.div`
 
   h1 {
     display: block;
-    text-align: start;
+    
     width: 100%;
-    margin-top: 8rem;
+    
+    font-size: 2.4rem;
+    text-align: start;
+
+    margin-top: 5.6rem;
   }
   
   .projects-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     gap: 1.6rem;
 
-    margin-top: 6.4rem;
+    margin-top: 4rem;
   }
 
   article {
