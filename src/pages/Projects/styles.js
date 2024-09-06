@@ -48,6 +48,10 @@ export const Container = styled.div`
       margin-inline: 4rem;
     }
 
+    h1 {
+      font-size: 4rem;
+    }
+
     .projects-wrapper {
       gap: 2.4rem;
       

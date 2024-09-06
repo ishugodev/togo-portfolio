@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.article`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.6rem;
 
   min-width: 28rem;
@@ -24,6 +25,11 @@ export const Container = styled.article`
     border-radius: 1rem;
   }
 
+  .description {
+    display: grid;
+    gap: 1.6rem;
+  }
+
   strong {
     font-size: 2rem;
   }
@@ -33,6 +39,12 @@ export const Container = styled.article`
     color: ${({ theme }) => theme.COLORS.BG_LIGHT_BROWN};
     font-size: 1.4rem;
     font-weight: 400;
+  }
+
+  .click-here {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
   }
 
   @media (min-width: 768px) {
@@ -45,12 +57,6 @@ export const Container = styled.article`
 
     img {
       max-width: 30rem;
-    }
-
-    .click-here {
-      display: flex;
-      align-items: center;
-      gap: .4rem;
     }
   }
 `;

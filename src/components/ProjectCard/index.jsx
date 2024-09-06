@@ -14,7 +14,7 @@ export function ProjectCard() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis volutpat elit, et suscipit urna. Donec ultricies, est vitae cursus dapibus, sem ex pretium mi, ut varius tortor nisi et nibh. Aenean vel porttitor risus, id tincidunt diam. Quisque dictum libero id metus tincidunt bibendum. Vivamus posuere leo et rutrum dictum.
         </p>
 
-        <p className="clickHere" href="">Clique para ver mais <HandPointing size={20} /></p>
+        <p className="click-here" href="">Clique para ver mais <HandPointing size={20} /></p>
       </div>
 
     </Container>

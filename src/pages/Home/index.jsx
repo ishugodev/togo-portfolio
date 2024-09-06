@@ -51,8 +51,6 @@ export function Home() {
         <div className="projects-wrapper">
           <ProjectCard />
           <ProjectCard />
-          <ProjectCard />
-          
         </div>
 
         <a className="see-all" href="">Se interessou? <span>Ver todos <ArrowRight size={16} /></span></a>
