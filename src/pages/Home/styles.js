@@ -38,6 +38,43 @@ export const Container = styled.div`
     font-size: 2.4rem;
   }
 
+  .modalContact {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    max-width: 57rem;
+
+    strong {
+      font-size: 2.4rem;
+      margin-bottom: 3.2rem;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+
+      padding: 1.6rem;
+
+      background: ${({ theme }) => theme.COLORS.BROWN_700};
+      color: ${({ theme }) => theme.COLORS.BG_LIGHT_YELLOW};
+
+      font-family: 'Titan One', sans-serif;
+      font-size: 2rem;
+      text-decoration: none;
+
+      border-radius: 2.2rem;
+
+      margin-bottom: 2.4rem;
+    
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   #intro p {
     color: ${({ theme }) => theme.COLORS.BROWN_200};
     font-weight: 600;

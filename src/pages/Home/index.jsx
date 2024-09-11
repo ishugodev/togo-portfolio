@@ -1,8 +1,12 @@
 import { ArrowRight, Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/react"
 
+import { useState } from "react"
+import { Link } from "react-router-dom"
+
 import { Container } from "./styles"
 
 import { Header } from "../../components/Header"
+import { Modal } from "../../components/Modal"
 import { ProjectCard } from "../../components/ProjectCard"
 import { IconCard } from "../../components/IconCard"
 import { Footer } from "../../components/Footer"
@@ -13,8 +17,26 @@ import python from "../../assets/icon_python.svg"
 import sqlServer from "../../assets/icon_sqlServer.svg"
 
 export function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  function handleModalOpen() {
+    setModalOpen(!modalOpen)
+  }
+
   return (
     <Container>
+      <Modal
+        className="modalContact"
+        modalOpen={modalOpen}
+        modalClose={handleModalOpen}
+      >
+        <strong>Entrar em contato</strong>
+
+        <Link to="mailto:thiagokrugel743@gmail.com" target="_blank"><Envelope size={24} />E-mail</Link>
+        <Link to="https://github.com/thiagokrugel" target="_blank"><GithubLogo size={24} />Github</Link>
+        <Link to="https://www.linkedin.com/in/thiago-krügel-25606a26a/" target="_blank"><LinkedinLogo size={24} />LinkedIn</Link>
+      </Modal>
+
       <Header />
 
       <section id="intro">
@@ -40,7 +62,7 @@ export function Home() {
           </IconCard>
         </div>
 
-        <button className="contact">
+        <button className="contact" onClick={handleModalOpen}>
           Entrar em contato
         </button>
       </section>
