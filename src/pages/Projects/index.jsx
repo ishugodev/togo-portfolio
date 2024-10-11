@@ -12,9 +12,9 @@ export function Projects() {
       <h1>Projetos</h1>
 
       <div className="projects-wrapper">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        <ProjectCard to="" />
+        <ProjectCard to="" />
+        <ProjectCard to="" />
       </div>
 
       <Footer />

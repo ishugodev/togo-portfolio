@@ -1,7 +1,10 @@
 import { ArrowRight, Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+
+import { api } from "../../services/api";
+import { useData } from "../../hooks/data";
 
 import { Container } from "./styles"
 
@@ -18,10 +21,16 @@ import sqlServer from "../../assets/icon_sqlServer.svg"
 
 export function Home() {
   const [modalOpen, setModalOpen] = useState(false);
+  const { readData, showFiles, data } = useData();
 
   function handleModalOpen() {
-    setModalOpen(!modalOpen)
+    setModalOpen(!modalOpen);
   }
+
+  useEffect(() => {
+    readData();
+    console.log(data)
+  }, []);
 
   return (
     <Container>
@@ -40,26 +49,30 @@ export function Home() {
       <Header />
 
       <section id="intro">
-        <h1>Oi! Eu sou Thiago Krügel</h1>
-        <h2>Cientista, Analista de dados, Desenvolvedor Back-end</h2>
+        
+        <h1>{Object.keys(data).length > 0 ? data.infos?.name : "carregando..."}</h1>
+        
+        <h2>{Object.keys(data).length > 0 ? data.infos?.title : "carregando..."}</h2>
 
         <p>
-        Profissional em crescimento nas áreas de ciência de dados, análise de dados e desenvolvimento back-end, aplicando e aprimorando habilidades enquanto busca entregar soluções e insights relevantes.
+        {Object.keys(data).length > 0 ? data.infos?.description : "carregando..."}
         </p>
 
         <div className="stacks-wrapper">
-          <IconCard title="Power BI" section="stacks">
-            <img src={powerBi} alt="Ícone Node.js" />
-          </IconCard>
-          <IconCard title="SQL Server" section="stacks">
-            <img src={sqlServer} alt="Ícone Node.js" />
-          </IconCard>
-          <IconCard title="Python" section="stacks">
-            <img src={python} alt="Ícone Node.js" />
-          </IconCard>
-          <IconCard title="Node.js" section="stacks">
-            <img src={node} alt="Ícone Node.js" />
-          </IconCard>
+          {
+            Object.keys(data).length > 0 ?
+              data.stacks?.map(stack =>
+                <IconCard
+                  key={String(stack.id)}
+                  title={stack.name}
+                  section="stacks"
+                >
+                  <img src={showFiles(stack)} alt={`Imagem de ${stack.name}`} />
+                  </IconCard>
+              )
+            :
+            "Carregando..."
+          }       
         </div>
 
         <button className="contact" onClick={handleModalOpen}>
@@ -89,7 +102,7 @@ export function Home() {
             <GithubLogo size={40} />
           </IconCard>
           <IconCard section="contacts" to="https://www.linkedin.com/in/thiago-krügel-25606a26a/" target="_blank">
-            <LinkedinLogo size={40} />
+            <LinkedinLogo />
           </IconCard>
         </div>
       </section>

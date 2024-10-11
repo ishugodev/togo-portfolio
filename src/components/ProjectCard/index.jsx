@@ -2,7 +2,7 @@ import { HandPointing } from "@phosphor-icons/react";
 
 import { Container } from "./styles";
 
-export function ProjectCard(to, ) {
+export function ProjectCard(to) {
   return(
     <Container
       to={to}
