@@ -8,6 +8,7 @@ export function IconCard({ children, title, section, to, ...rest}) {
 
   return(
     <Container
+      $section={section}
       title={title}
       size={styles?.size}
       $border={styles?.border}

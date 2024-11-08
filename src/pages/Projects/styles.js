@@ -1,16 +1,40 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInH1 = keyframes`
+  from {
+    transform: translateX(-8rem);
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeInProjects = keyframes`
+  from {
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  margin: 1.6rem;
 
   header {
-    width: 100%;
+    margin-top: 1.6rem;
+    z-index: 1;
   }
 
+  header, h1, .projects-wrapper, footer {
+    margin-inline: 1.6rem;
+  }
+
+  header::before {
+    top: 0;
+  }
+  
   h1 {
     display: block;
     
@@ -20,6 +44,9 @@ export const Container = styled.div`
     text-align: start;
 
     margin-top: 5.6rem;
+    
+    opacity: 0;
+    animation: ${fadeInH1} 0.6s ease-in-out forwards;
   }
   
   .projects-wrapper {
@@ -28,24 +55,38 @@ export const Container = styled.div`
     gap: 1.6rem;
 
     margin-top: 4rem;
+
+    opacity: 0;
+    animation: ${fadeInProjects} 0.6s 0.3s ease-in-out forwards;
   }
 
   .projects-wrapper a {
     flex-direction: column;
     gap: 1.6rem;
+
+    max-width: 100%;
+
     padding: 1.6rem;
   }
 
-  @media (min-width: 768px) {
-    margin: 2.4rem 4rem;
+  @media (max-width: 768px) {
+    header ul {
+      width: calc(100% - 3.2rem);
+      margin-top: 1.6rem;
+    }
+  }
+
+  @media (min-width: 769px) {
+    align-items: center;
 
     header {
-      width: 100%;
+      margin-top: 2.4rem;
     }
 
     header, h1, .projects-wrapper, footer {
       max-width: 108rem;
       margin-inline: 4rem;
+      width: calc(100% - 8rem);
     }
 
     h1 {
@@ -54,8 +95,6 @@ export const Container = styled.div`
 
     .projects-wrapper {
       gap: 2.4rem;
-      
-      width: 100%;
     }
     
     .projects-wrapper a {

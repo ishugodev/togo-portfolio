@@ -17,8 +17,6 @@ export function Modal({ modalOpen, modalClose, children, ...rest }) {
     modalOpen && (
 
     <>
-      <Overlay onClick={modalClose} />
-
       <Container {...rest}>
         <button onClick={modalClose}><X size={32} /></button>
         {children}

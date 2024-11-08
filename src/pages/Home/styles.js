@@ -1,11 +1,44 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const fadeInX = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-8rem);
+  }
+`;
+
+const fadeInHeader = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+`;
+
+const fadeInPinnedProjects = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+`;
+
+const scale = keyframes`
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
   header {
-    margin-top: 1.6rem;   
+    margin-top: 1.6rem;
+    z-index: 1;
+
+    animation: ${fadeInHeader} 0.5s ease-in-out forwards;
   }
   
   header, #intro, h3, .see-all, #contacts, footer {
@@ -38,43 +71,6 @@ export const Container = styled.div`
     font-size: 2.4rem;
   }
 
-  .modalContact {
-    display: flex;
-    flex-direction: column;
-
-    width: 80%;
-    max-width: 57rem;
-
-    strong {
-      font-size: 2.4rem;
-      margin-bottom: 3.2rem;
-    }
-
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.2rem;
-
-      padding: 1.6rem;
-
-      background: ${({ theme }) => theme.COLORS.BROWN_700};
-      color: ${({ theme }) => theme.COLORS.BG_LIGHT_YELLOW};
-
-      font-family: 'Titan One', sans-serif;
-      font-size: 2rem;
-      text-decoration: none;
-
-      border-radius: 2.2rem;
-
-      margin-bottom: 2.4rem;
-    
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   #intro p {
     color: ${({ theme }) => theme.COLORS.BROWN_200};
     font-weight: 600;
@@ -88,6 +84,28 @@ export const Container = styled.div`
     justify-content: center;
 
     margin-bottom: 4rem;
+
+    * {
+      transform: scale(0);
+    }
+
+    &:is(.animate) {
+      *:nth-child(1) {
+        animation: ${scale} 0.2s 0.4s forwards ease-in-out;
+      }
+      *:nth-child(2) {
+        animation: ${scale} 0.2s 0.6s forwards ease-in-out;
+      }
+      *:nth-child(3) {
+        animation: ${scale} 0.2s 0.8s forwards ease-in-out;
+      }
+      *:nth-child(4) {
+        animation: ${scale} 0.2s 1s forwards ease-in-out;
+      }
+    }
+  }
+
+  .stacks-wrapper:has(.animate) .stacks-wrapper {
   }
 
   button.contact {
@@ -102,7 +120,14 @@ export const Container = styled.div`
     border: 3px solid ${({ theme }) => theme.COLORS.BROWN_700};
     border-radius: 7.7rem;
 
+    transition: 0.2s ease-in-out;
+
     cursor: pointer;
+  }
+
+  button.contact:hover {
+    background: ${({ theme }) => theme.COLORS.BROWN_700};
+    color: ${({ theme }) => theme.COLORS.BG_LIGHT_BROWN};
   }
 
   #pinned-projects, #contacts {
@@ -175,6 +200,19 @@ export const Container = styled.div`
     align-items: center;
     gap: .4rem;
     color: ${({ theme }) => theme.COLORS.BROWN_900};
+
+    border-bottom: 1px solid transparent;
+    transition: 0.15s ease-in-out;
+  }
+
+  a.see-all span:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.COLORS.BROWN_900};
+  }
+
+  #contacts h4 {
+    ${({ isVisible }) => isVisible && css`
+      animation: ${fadeInX} .5s ease-in-out;  
+    `};
   }
 
   .contact-wrapper {
@@ -183,6 +221,16 @@ export const Container = styled.div`
     gap: 2rem;
 
     margin-top: 4rem;
+
+    * {
+      transform: scale(0);
+    }
+
+    &:is(.animate) {
+      * {
+        animation: ${scale} 0.3s 0.4s forwards ease-in-out;
+      }
+    }
   }
 
   @media (min-width: 768px) {
@@ -205,8 +253,6 @@ export const Container = styled.div`
     h1 {
       font-size: 6.4rem;
       font-weight: 800;
-
-      margin-bottom: 1.6rem;
     }
 
     h2 {
@@ -316,5 +362,23 @@ export const Container = styled.div`
 
       margin-top: 6.4rem;
     }
+  }
+`;
+
+export const Intro = styled.div`
+  &.animate {
+    animation: ${fadeInX} 0.5s ease-in-out forwards;
+  }
+`;
+
+export const PinnedProjects = styled.div`
+  &.animate {
+    animation: ${fadeInPinnedProjects} 0.5s ease-in-out forwards;
+  }
+`;
+
+export const Contacts = styled.div`
+  &.animate {
+    animation: ${fadeInX} 0.5s ease-in-out forwards;
   }
 `;

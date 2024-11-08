@@ -33,7 +33,7 @@ export const Container = styled.footer`
     }
 
     p {
-      font-size: 3.2rem;
+      font-size: 2.4rem;
       font-weight: 700;
     }
   }

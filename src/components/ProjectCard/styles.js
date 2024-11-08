@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-export const Container = styled(Link)`
+export const Container = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,15 +19,39 @@ export const Container = styled(Link)`
 
   cursor: pointer;
   
-  img {
+  .image-wrapper {
+    display: flex;
+
     width: 100%;
-    height: 21rem;
-    object-fit: cover;
-    object-position: center center;
+    min-height: 21rem;
+
+    overflow: hidden;
+
     border-radius: 1rem;
   }
+  
+  img {
+    width: 100%;
+    max-height: 30rem;
+    object-fit: cover;
 
-  .description {
+    transition: 0.2s ease-in-out;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .text div {
     display: grid;
     gap: 1.6rem;
   }
@@ -50,7 +73,7 @@ export const Container = styled(Link)`
     gap: .4rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     flex-direction: row;
     gap: 3.2rem;
 
@@ -58,8 +81,8 @@ export const Container = styled(Link)`
 
     padding: 3.2rem;
 
-    img {
-      max-width: 30rem;
+    .image-wrapper {
+      max-width: 100%;
     }
   }
 `;

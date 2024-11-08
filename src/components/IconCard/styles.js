@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled(Link)`
@@ -19,6 +19,12 @@ export const Container = styled(Link)`
   text-decoration: none;
 
   cursor: ${({ to }) => (to ? 'pointer' : 'default')};
+
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background: ${({ theme, $section }) => $section == 'contacts' ? theme.COLORS.BROWN_900 : theme.COLORS.BROWN_700};
+  }
 
   img {
     width: ${({ $child_size }) => `${$child_size?.lg}rem`};

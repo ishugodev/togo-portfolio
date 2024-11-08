@@ -1,6 +1,7 @@
 export default {
   COLORS: {
     BROWN_900: "#34170E",
+    BROWN_800: "#45241a",
     BROWN_700: "#562E22",
     BROWN_200: "#7C6963",
 
