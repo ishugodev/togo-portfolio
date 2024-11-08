@@ -185,28 +185,30 @@ export const Container = styled.div`
     margin-right: 1.6rem;
   }
 
-  a.see-all {
+  .see-all {
     display: inline-block;
 
     color: ${({ theme }) => theme.COLORS.BROWN_200};
     font-weight: 600;
     text-decoration: none;
 
+    cursor: pointer;
+
     margin-top: 4rem;
   }
   
-  a.see-all span {
+  .see-all span {
     display: inline-flex;
     align-items: center;
     gap: .4rem;
     color: ${({ theme }) => theme.COLORS.BROWN_900};
 
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     transition: 0.15s ease-in-out;
   }
 
-  a.see-all span:hover {
-    border-bottom: 1px solid ${({ theme }) => theme.COLORS.BROWN_900};
+  .see-all:hover span {
+    border-bottom: 2px solid ${({ theme }) => theme.COLORS.BROWN_200};
   }
 
   #contacts h4 {

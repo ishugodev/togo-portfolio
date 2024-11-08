@@ -9,6 +9,12 @@ const fadeInX = keyframes`
   }
 `;
 
+const header = keyframes`
+  from {
+    transform: translate(0rem);
+  }
+`;
+
 const scale = keyframes`
   from {
     transform: scale(0);
@@ -24,18 +30,16 @@ export const Container = styled.div`
   
   header {
     margin-top: 1.6rem;
+    z-index: 1;
+
+    animation: ${header} 0.0s ease-in-out forwards;
   }
   
   header, h1, .p, .contacts-wrapper, footer {
     margin-inline: 1.6rem;
   }
 
-  header::before {
-    top: 0;
-  }
-
   h1 {
-    width: 100%;
     font-size: 2.4rem;
     margin-top: 5.6rem;
 
@@ -72,13 +76,6 @@ export const Container = styled.div`
     }
     *:nth-child(4) {
       animation: ${scale} 0.2s 1.2s forwards ease-in-out;
-    }
-  }
-
-  @media (max-width: 768px) {
-    header ul {
-      width: calc(100% - 3.2rem);
-      margin-top: 1.6rem;
     }
   }
 

@@ -31,6 +31,10 @@ export function Home() {
     navigate('/contact');
   }
 
+  function handleAllProjects() {
+    navigate('/projects');
+  }
+
   const useIntersectionObserver = (ref) => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -144,7 +148,7 @@ export function Home() {
           }
         </div>
 
-        <a className="see-all" href="">Se interessou? <span>Ver todos <ArrowRight size={16} /></span></a>
+        <a className="see-all" onClick={handleAllProjects}>Se interessou? <span>Ver todos <ArrowRight size={16} /></span></a>
       </PinnedProjectsSection>
 
       <ContactsSection>

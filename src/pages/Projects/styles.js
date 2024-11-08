@@ -9,6 +9,12 @@ const fadeInH1 = keyframes`
   }
 `;
 
+const header = keyframes`
+  from {
+    transform: translate(0rem);
+  }
+`;
+
 const fadeInProjects = keyframes`
   from {
     transform: translateY(5rem);
@@ -25,20 +31,16 @@ export const Container = styled.div`
   header {
     margin-top: 1.6rem;
     z-index: 1;
+
+    animation: ${header} 0.0s ease-in-out forwards;
   }
 
   header, h1, .projects-wrapper, footer {
     margin-inline: 1.6rem;
   }
 
-  header::before {
-    top: 0;
-  }
-  
   h1 {
     display: block;
-    
-    width: 100%;
     
     font-size: 2.4rem;
     text-align: start;
@@ -67,13 +69,6 @@ export const Container = styled.div`
     max-width: 100%;
 
     padding: 1.6rem;
-  }
-
-  @media (max-width: 768px) {
-    header ul {
-      width: calc(100% - 3.2rem);
-      margin-top: 1.6rem;
-    }
   }
 
   @media (min-width: 769px) {
